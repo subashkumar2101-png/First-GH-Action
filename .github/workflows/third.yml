@@ -1,0 +1,24 @@
+name: Name of the workflow
+on: workflow_dispatch
+
+jobs:
+  First_Job:
+    name: First Job Running
+    runs-on: windows-lastest
+    steps:
+	    -name: Hi on windows
+		   run: echo"Hi"
+
+	Second_Job:
+	  name: Second Job Running
+	  runs-on: ubuntu-latest
+    steps:
+		  -name: Hi on ubuntu
+		   run: echo"hi"
+	
+  Third_Job:
+	  name: Third Job Running
+	  runs-on: macos-latest
+	  steps:
+		  -name: Hi on Mac
+		   run: echo"hi"
