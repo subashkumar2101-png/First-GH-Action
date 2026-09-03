@@ -1,0 +1,21 @@
+name: First Work Flow
+on: workflow_dispatch
+
+jobs:
+    First-Jobs:
+      runs-on: windows-latest
+      steps:
+        - name: Printing Hello World
+          run: echo "Hello World"
+          
+    Second-Jobs:
+      runs-on: macos-latest
+      steps:
+        - name: Printing What's up
+          run: echo "Whats up"
+          
+    Third-Jobs:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Printing byee
+          run: echo "See u !"
