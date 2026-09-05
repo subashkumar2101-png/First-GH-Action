@@ -1,0 +1,36 @@
+name: Test React
+on: workflow_dispatch
+jobs:
+  Test:
+    name: Job Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v7
+
+      - name: Installing node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "latest"
+
+      - name: Installing Dependency
+        run: npm ci
+
+      - name: Run Test
+        run: npm test
+  Deploy:
+    name: Deploy
+    runs-on: windows-latest
+    steps:
+        - name: Get code
+          uses: actions/checkout@v7
+        - name: Install Node
+          uses: actions/setup-node@v7
+          with:
+            node-version: "latest"
+        - name: Install Dependency
+          run: npm ci
+        - name: build project
+          run: npm run build
+        - name: Display project
+          run: echo "Diplaying Build"
